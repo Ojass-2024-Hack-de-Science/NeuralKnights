@@ -118,8 +118,9 @@ export default function LinkInput() {
           break;
         }
       }
-    } catch (error) {
-      console.log(error);
+      set(0)
+    }catch(error){
+      console.log(error)
     }
   };
   return (
