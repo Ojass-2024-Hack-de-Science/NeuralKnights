@@ -23,12 +23,13 @@ export default function Page() {
 
       {/* the main pg */}
       <Hero />
-      {/* user input from link */}
-      <LinkInput />
-      {/* the tick and its text,  */}
-      <NetworkCheck />
+      <div style={{ height: "100vh" }}>
+        {/* user input from link */}
+        <LinkInput />
 
-      <About />
+        {/* the tick and its text,  */}
+        <NetworkCheck />
+      </div>
     </div>
   );
 }
