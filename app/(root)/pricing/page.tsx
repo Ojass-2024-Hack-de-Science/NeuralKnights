@@ -6,6 +6,7 @@ import Navbar from "../dashboard/Navbar";
 import { useState } from "react";
 import Pricing from "./Pricing";
 import About from "../dashboard/About";
+import Test from "./Test";
 // import Hero from "./Hero";
 
 export default function Page() {
@@ -15,10 +16,14 @@ export default function Page() {
   };
 
   return (
-    <div style={{ backgroundColor: "#002c46", backgroundAttachment: "fixed" }}>
-      <Navbar />
-      <Pricing />
-      {/* the main pg */}
-    </div>
+    <>
+      {/* <div
+        style={{ backgroundColor: "#002c46", backgroundAttachment: "fixed" }}
+      >
+        <Navbar />
+        <Pricing />
+      </div> */}
+      <Test />
+    </>
   );
 }

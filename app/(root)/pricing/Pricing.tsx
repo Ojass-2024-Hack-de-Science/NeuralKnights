@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/CustomBtnStyles.css";
 import { Button } from "@/components/ui/button";
+import { TiTick } from "react-icons/ti";
 const Pricing = () => {
   return (
     <div
@@ -14,7 +15,7 @@ const Pricing = () => {
         <div className=" merriweather-light text-white text-6xl mx-5 py-2 flex justify-center items-center ">
           PRICING
         </div>
-        <div className="flex justify-center items-center my-auto mx-auto ">
+        <div className="flex justify-center items-center my-5 mx-auto ">
           <div
             className="mx-4 px-4 flex flex-col justify-between"
             style={{
@@ -29,8 +30,19 @@ const Pricing = () => {
             </div>
             <div className="merriweather-light text-white text-2xl my-3">
               <ol>
-                <li className="my-2">Free site checking upto 5 sites a day</li>
-                <li className="my-2">Free Chat feature</li>
+                <li className="my-2 flex">
+                  <div>
+                    <TiTick />
+                  </div>{" "}
+                  <div>Free site checking upto 5 sites a day</div>
+                </li>
+                <li className="my-2 flex">
+                  {" "}
+                  <div>
+                    <TiTick />
+                  </div>{" "}
+                  <div>Free Chat feature</div>
+                </li>
               </ol>
             </div>
             <div className="flex justify-center items-end my-3">
@@ -48,13 +60,31 @@ const Pricing = () => {
               backgroundColor: "black",
             }}
           >
-            <div className="merriweather-light text-4xl text-white animBtn  my-2">
+            <div className="merriweather-light text-4xl text-white animBtn  my-2 flex ">
               Premium plan
             </div>
             <div className="merriweather-light text-white text-2xl my-3">
               <ol>
-                <li className="my-2">Free site checking upto 5 sites a day</li>
-                <li className="my-2">Free Chat feature</li>
+                <li className="my-2 flex">
+                  <div>
+                    <TiTick />
+                  </div>{" "}
+                  <div>Free site checking upto 25 sites a day</div>
+                </li>
+                <li className="my-2 flex">
+                  {" "}
+                  <div>
+                    <TiTick />
+                  </div>{" "}
+                  <div>Free Chat feature</div>
+                </li>
+                <li className="my-2 flex">
+                  {" "}
+                  <div>
+                    <TiTick />
+                  </div>{" "}
+                  <div>Unlimited community support </div>
+                </li>
               </ol>
             </div>
             <div className="flex justify-center items-end my-3">
@@ -72,13 +102,38 @@ const Pricing = () => {
               backgroundColor: "black",
             }}
           >
-            <div className="merriweather-light text-4xl text-white animBtn  my-2">
+            <div className="merriweather-light text-4xl text-white animBtn  my-2 flex">
               Special plan
             </div>
             <div className="merriweather-light text-white text-2xl my-3">
               <ol>
-                <li className="my-2">Free site checking upto 5 sites a day</li>
-                <li className="my-2">Free Chat feature</li>
+                <li className="my-2 flex">
+                  <div>
+                    <TiTick />
+                  </div>{" "}
+                  <div>Free site checking upto 100 sites a day</div>
+                </li>
+                <li className="my-2 flex">
+                  {" "}
+                  <div>
+                    <TiTick />
+                  </div>{" "}
+                  <div>Free Chat feature</div>
+                </li>
+                <li className="my-2 flex">
+                  {" "}
+                  <div>
+                    <TiTick />
+                  </div>{" "}
+                  <div>Unlimited community support </div>
+                </li>
+                <li className="my-2 flex">
+                  {" "}
+                  <div>
+                    <TiTick />
+                  </div>{" "}
+                  <div>Personal email support </div>
+                </li>
               </ol>
             </div>
             <div className="flex justify-center items-end my-3">
