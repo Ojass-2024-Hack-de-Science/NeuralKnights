@@ -7,7 +7,15 @@ import Typography from "@mui/material/Typography";
 
 export default function ButtonAppBar() {
   return (
-    <Box sx={{ flexGrow: 1, zIndex: 100 }}>
+    <Box
+      sx={{
+        flexGrow: 1,
+        zIndex: 100,
+        position: "sticky",
+        bottom: "0",
+        width: "100%",
+      }}
+    >
       <AppBar position="sticky">
         <Toolbar>
           <Typography
