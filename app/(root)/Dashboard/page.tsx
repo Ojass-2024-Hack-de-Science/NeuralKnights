@@ -2,12 +2,12 @@
 import tick from "@/assets/tick.jpg";
 import cross from "@/assets/cross.jpg";
 import Image from "next/image";
-import Navbar from "../dashboard/Navbar";
+import Navbar from "./Navbar";
 import { useState } from "react";
-import NetworkCheck from "../dashboard/NetworkCheck";
-import LinkInput from "../dashboard/LinkInput";
-import Hero from "../dashboard/Hero";
-import About from "../dashboard/About";
+import NetworkCheck from "./NetworkCheck";
+import LinkInput from "./LinkInput";
+import Hero from "./Hero";
+import About from "./About";
 // import Hero from "./Hero";
 
 export default function Page() {
@@ -24,7 +24,7 @@ export default function Page() {
       {/* the main pg */}
       <Hero />
       {/* user input from link */}
-      <LinkInput />
+      {/* <LinkInput /> */}
       {/* the tick and its text,  */}
       <NetworkCheck />
 

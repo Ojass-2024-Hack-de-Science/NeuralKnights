@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Reveal from "@/components/Reveal";
 import "../styles/CustomBtnStyles.css";
+import LinkInput from "./LinkInput";
 export default function Hero() {
   return (
     <>
@@ -21,7 +22,7 @@ export default function Hero() {
           className="text-white z-20"
           style={{
             position: "absolute",
-            top: "30%",
+            top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
           }}
@@ -35,9 +36,12 @@ export default function Hero() {
             </div>
           </Reveal>
           <div className="flex justify-center">
-            <p className="animBtn text-3xl my-7 merriweather-light">
+            <p className="animBtn text-3xl mt-7 merriweather-light">
               Check today{" "}
             </p>
+          </div>
+          <div>
+            <LinkInput />
           </div>
         </div>
       </div>
