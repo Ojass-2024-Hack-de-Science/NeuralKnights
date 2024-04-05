@@ -10,6 +10,10 @@ export const NEXT_AUTH = {
       clientId: process.env.GOOGLE_CLIENT_ID!,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
     }),
+    GitHubProvider({
+      clientId: process.env.GITHUB_ID!,
+      clientSecret: process.env.GITHUB_SECRET!,
+    }),
     Credentials({
       name: "credentials",
       credentials: {
@@ -53,6 +57,7 @@ export const NEXT_AUTH = {
         const userData = await User.find({
           GoogleId: user.id,
         });
+        console.log(user,"user")
         if (userData.length===0) {
           const data = await User.create({
             GoogleId: user.id,

@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useRouter } from "next/navigation";
+import CardWarppper from "../CardWrppper";
 
 const formSchema = z.object({
   username: z.string().min(2, {
@@ -50,52 +51,69 @@ export function SignUp() {
   }
 
   return (
-    <div className=" w-[100vw] h-[100vh] flex justify-center items-center flex-col">
-      <div className="w-full text-center p-5 font-bold text-xl">SIGNUP</div>
+    <div className="w-[500px]">
+    <CardWarppper
+      title="SignUp"
+      backButtonHref="/"
+      backButtonTitle="Already have an account?"
+      social
+    >
       <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="space-y-4 flex justify-center items-center flex-col"
-        >
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Username</FormLabel>
-                <FormControl>
-                  <Input placeholder="Enter Your Name" {...field} />
-                </FormControl>
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder="Enter Your Email" {...field} type="email" />
-                </FormControl>
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="password"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Password</FormLabel>
-                <FormControl>
-                  <Input placeholder="Enter Your Password" {...field} type="password" />
-                </FormControl>
-              </FormItem>
-            )}
-          />
-          <Button type="submit">SignUp</Button>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <div className=" space-y-3">
+            <FormField
+              control={form.control}
+              name="username"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input placeholder="ABC" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input placeholder="email@gamil.com" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Password</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="password"
+                      placeholder="********"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+          <Button
+            className=" flex justify-center items-center w-[95%] font-bold"
+            type="submit"
+          >
+            SignUp
+          </Button>
         </form>
       </Form>
-    </div>
+    </CardWarppper>
+  </div>
   );
 }
