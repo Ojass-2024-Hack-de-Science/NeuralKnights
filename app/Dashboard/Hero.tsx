@@ -1,8 +1,9 @@
 "use client";
-import heroImg from "../../assets/heroImg.jpg"; // Change the import name to lowercase
+import heroImg from "../../assets/heroImg.jpg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import Reveal from "../../components/Reveal";
+import AnimatedText from "@/components/AnimatedText";
 
 export default function Hero() {
   return (
@@ -26,6 +27,7 @@ export default function Hero() {
           }}
         >
           <Reveal>
+            {/* <AnimatedText> */}
             <p className=" text-8xl" style={{}}>
               Is your Network{" "}
               <u>
@@ -33,6 +35,7 @@ export default function Hero() {
               </u>
               ?
             </p>
+            {/* </AnimatedText> */}
           </Reveal>
           <div>
             <p className=" text-3xl my-7">Check today </p>
