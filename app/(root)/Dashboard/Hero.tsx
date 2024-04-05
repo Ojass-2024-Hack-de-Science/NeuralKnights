@@ -11,7 +11,7 @@ export default function Hero() {
       <div
         style={{
           position: "relative", // Add position relative to the container
-          height: "calc(100vh )",
+          height: "calc(100vh)",
           overflow: "hidden",
           background: `url(${heroImg.src})`,
           backgroundAttachment: "fixed",
@@ -28,15 +28,17 @@ export default function Hero() {
           }}
         >
           <Reveal>
-            <div className=" text-7xl merriweather-light    flex justify-center  items-center flex-col">
-              Is your Network{" "}
+            <div className=" md:text-7xl merriweather-light  sm:text-5xl text-4xl flex justify-center  items-center flex-col mt-4">
+              Is your Network
               <u>
-                <b className="animBtn merriweather-light">Safe ? </b>
+                <span className="animBtn merriweather-light font-semibold">
+                  Safe?{" "}
+                </span>
               </u>
             </div>
           </Reveal>
           <div className="flex justify-center">
-            <p className="animBtn text-3xl mt-7 merriweather-light">
+            <p className="animBtn text-base md:text-3xl mt-6 merriweather-light sm:text-2xl">
               Check today{" "}
             </p>
           </div>
