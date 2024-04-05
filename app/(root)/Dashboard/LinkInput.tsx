@@ -9,7 +9,7 @@ import { loadingState, todoListState } from "@/lib/atom";
 import { useSetRecoilState } from "recoil";
 
 export default function LinkInput() {
-  const [website,setWebsite] = useState("");
+  const [website, setWebsite] = useState("");
   // const [flag,setFlag] = useState(0);
   const set = useSetRecoilState(todoListState)
   const setLoading = useSetRecoilState(loadingState)
@@ -26,25 +26,24 @@ export default function LinkInput() {
 //     "src_bytes": [0, 0, 0, 0, 0, 889]
 // }
 
+  // // {
+  // //   "protocol_type": 1,
+  // //   "service": 19,
+  // //   "flag": 9,
+  // //   "src_bytes": 491,
+  // //   "dst_bytes": 0,
+  // //   "count": 2,
+  // //   "same_srv_rate": 1.00,
+  // //   "diff_srv_rate": 0.00,
+  // //   "dst_host_srv_count": 25,
+  // //   "dst_host_same_srv_rate": 0.17
+  // // }
 
-// // {
-// //   "protocol_type": 1,
-// //   "service": 19,
-// //   "flag": 9,
-// //   "src_bytes": 491,
-// //   "dst_bytes": 0,
-// //   "count": 2,
-// //   "same_srv_rate": 1.00,
-// //   "diff_srv_rate": 0.00,
-// //   "dst_host_srv_count": 25,
-// //   "dst_host_same_srv_rate": 0.17
-// // }
-
-  const handleML=async()=>{
+  const handleML = async () => {
     const data: { [key: string]: number } = {
-      "ftp_data": 19,
-      "other": 41,
-      "private": 46,
+      ftp_data: 19,
+      other: 41,
+      private: 46,
       "https:": 22,
       "remote_job": 48,
       "name": 33,
@@ -94,18 +93,27 @@ export default function LinkInput() {
           protocol_type:data[res.protocol_type[i]],
           service: res.service,
           flag: res.flag,
-          src_bytes:res.src_bytes[i],
-          dst_bytes:res.dst_bytes[i],
-          count:res.count,
-          same_srv_rate:res.same_srv_rate,
-          diff_srv_rate:res.diff_srv_rate,
+          src_bytes: res.src_bytes[i],
+          dst_bytes: res.dst_bytes[i],
+          count: res.count,
+          same_srv_rate: res.same_srv_rate,
+          diff_srv_rate: res.diff_srv_rate,
           dst_host_srv_count: res.dst_host_srv_count,
-          dst_host_same_srv_rate:res.dst_host_same_srv_rate,
-        }
-        const ML = await axios.post("https://hornet-inspired-remotely.ngrok-free.app/ghjanomaly_prediction",content)
-        console.log(ML)
-        if(ML.data.prediction[0] === 1){
-          set(1)
+          dst_host_same_srv_rate: res.dst_host_same_srv_rate,
+        };
+
+        const ML = await axios.post(
+          "https://hornet-inspired-remotely.ngrok-free.app/ghjanomaly_prediction",
+          content
+        );
+        console.log(ML);
+        if (
+          content.dst_bytes > 1000 ||
+          ML.data.prediction[0] === 1 ||
+          content.src_bytes > 1000
+        ) {
+          set(1);
+          console.log("Malicious");
           break;
         }else{
           set(0)
@@ -115,7 +123,7 @@ export default function LinkInput() {
     }catch(error){
       console.log(error)
     }
-  }
+  };
   return (
     <>
       <Box>
@@ -140,7 +148,9 @@ export default function LinkInput() {
             <h2 className="flex flex-col justify-center m-auto text-3xl pb-4">
               {/* <input type="url" placeholder=" Enter Your Link" required /> */}
               <Input
-              onChange={(e)=>{setWebsite(e.target.value)}}
+                onChange={(e) => {
+                  setWebsite(e.target.value);
+                }}
                 type="url"
                 placeholder="Enter Your Link"
                 required
@@ -150,7 +160,7 @@ export default function LinkInput() {
             </h2>
             <div className="flex justify-center merriweather-light pb-4">
               <Button
-              onClick={handleML}
+                onClick={handleML}
                 className=""
                 variant={"secondary"}
                 style={{ fontSize: "1em" }}
