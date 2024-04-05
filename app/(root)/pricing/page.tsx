@@ -15,10 +15,12 @@ export default function Page() {
   };
 
   return (
-    <div style={{ backgroundColor: "#002c46", backgroundAttachment: "fixed" }}>
-      <Navbar />
-      <Pricing />
-      {/* the main pg */}
-    </div>
+    <>
+      <div style={{ backgroundColor: "#b3ecff"}}>
+        <Navbar />
+        <Pricing />
+      </div>
+      {/* <Test /> */}
+    </>
   );
 }

@@ -1,95 +1,119 @@
+"use client";
 import React from "react";
 import "../styles/CustomBtnStyles.css";
-import { Button } from "@/components/ui/button";
+import "../styles/PricingStyles.css";
+import "../styles/CustomBtnStyles.css";
+import Footer from "../dashboard/Footer";
 const Pricing = () => {
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        background:
-          "rgb(0,0,0) linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%)",
-      }}
-    >
-      <div>
-        <div className=" merriweather-light text-white text-6xl mx-5 py-2 flex justify-center items-center ">
-          PRICING
+    <>
+      {/* backgroundColor: "#002c46" */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: "3rem",
+          margin: "0.5em",
+        }}
+        className="merriweather-light"
+      >
+        PRICING
+      </div>
+      <div className="wrapper ">
+        <div
+          className="pricing-table gprice-single"
+          style={{ maxHeight: "80dvh", backgroundColor: "#002c46" }}
+        >
+          <div className="head">
+            <h4 className="title text-white">Basic</h4>
+          </div>
+          <div className="content">
+            <div className="price">
+              <h1>FREE</h1>
+            </div>
+            <ul>
+              <li>5 GB Ram</li>
+              <li>40GB SSD Cloud Storage</li>
+              <li>Month Subscription</li>
+              <li>Responsive Framework</li>
+              <li>
+                {" "}
+                <del>Monthly Billing Software</del>{" "}
+              </li>
+              <li>
+                {" "}
+                <del>1 Free Website</del>
+              </li>
+            </ul>
+            <div
+              style={{
+                color: "white",
+                fontSize: "2em",
+                border: "1px solid white",
+              }}
+            >
+              Current plan
+            </div>
+          </div>
         </div>
-        <div className="flex justify-center items-center my-auto mx-auto ">
-          <div
-            className="mx-4 px-4 flex flex-col justify-between"
-            style={{
-              border: "2px solid white",
-              maxWidth: "400px",
-              minHeight: "400px",
-              backgroundColor: "black",
-            }}
-          >
-            <div className="merriweather-light text-4xl text-white animBtn  my-2">
-              Base plan
+        <div
+          className="pricing-table gprice-single"
+          style={{ maxHeight: "80dvh", backgroundColor: "#002c46" }}
+        >
+          <div className="head">
+            <h4 className="title  text-white">Standard</h4>
+          </div>
+          <div className="content">
+            <div className="price">
+              <h1>₹149</h1>
             </div>
-            <div className="merriweather-light text-white text-2xl my-3">
-              <ol>
-                <li className="my-2">Free site checking upto 5 sites a day</li>
-                <li className="my-2">Free Chat feature</li>
-              </ol>
-            </div>
-            <div className="flex justify-center items-end my-3">
-              <Button style={{ width: "100%", backgroundColor: "blue" }}>
-                Subscribe
-              </Button>
+            <ul>
+              <li>5 GB Ram</li>
+              <li>40GB SSD Cloud Storage</li>
+              <li>Month Subscription</li>
+              <li>Responsive Framework</li>
+              <li>Monthly Billing Software</li>
+              <li>
+                <del>1 Free Website</del>
+              </li>
+            </ul>
+            <div className="sign-up">
+              <a href="#" className="btn bordered radius">
+                Signup Now
+              </a>
             </div>
           </div>
-          <div
-            className="mx-4 px-4 flex flex-col justify-between"
-            style={{
-              border: "2px solid white",
-              maxWidth: "400px",
-              minHeight: "400px",
-              backgroundColor: "black",
-            }}
-          >
-            <div className="merriweather-light text-4xl text-white animBtn  my-2">
-              Premium plan
-            </div>
-            <div className="merriweather-light text-white text-2xl my-3">
-              <ol>
-                <li className="my-2">Free site checking upto 5 sites a day</li>
-                <li className="my-2">Free Chat feature</li>
-              </ol>
-            </div>
-            <div className="flex justify-center items-end my-3">
-              <Button style={{ width: "100%", backgroundColor: "blue" }}>
-                Subscribe
-              </Button>
-            </div>
+        </div>
+        <div
+          className="pricing-table gprice-single"
+          style={{ maxHeight: "80dvh", backgroundColor: "#002c46" }}
+        >
+          <div className="head">
+            <h4 className="title  text-white">Premium</h4>
           </div>
-          <div
-            className="mx-4 px-4 flex flex-col justify-between"
-            style={{
-              border: "2px solid white",
-              maxWidth: "400px",
-              minHeight: "400px",
-              backgroundColor: "black",
-            }}
-          >
-            <div className="merriweather-light text-4xl text-white animBtn  my-2">
-              Special plan
+          <div className="content">
+            <div className="price">
+              <h1>₹349</h1>
             </div>
-            <div className="merriweather-light text-white text-2xl my-3">
-              <ol>
-                <li className="my-2">Free site checking upto 5 sites a day</li>
-                <li className="my-2">Free Chat feature</li>
-              </ol>
-            </div>
-            <div className="flex justify-center items-end my-3">
-              <Button style={{ width: "100%", backgroundColor: "blue" }}>
-                Subscribe
-              </Button>
+            <ul>
+              <li>5 GB Ram</li>
+              <li>40GB SSD Cloud Storage</li>
+              <li>Month Subscription</li>
+              <li>Responsive Framework</li>
+              <li>Monthly Billing Software</li>
+              <li>1 Free Website</li>
+            </ul>
+            <div className="sign-up">
+              <a href="#" className="btn bordered radius">
+                Signup Now
+              </a>
             </div>
           </div>
         </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 };
 
