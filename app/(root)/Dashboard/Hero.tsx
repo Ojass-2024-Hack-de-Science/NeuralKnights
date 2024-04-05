@@ -29,7 +29,18 @@ export default function Hero() {
         >
           <Reveal>
             <div className=" md:text-7xl merriweather-light  sm:text-5xl text-4xl flex justify-center  items-center flex-col mt-4">
-              Is your Network
+              <div
+                style={{
+                  width: "100%",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  textAlign: "center",
+                }}
+              >
+                Is your Network
+              </div>
+
               <u>
                 <span className="animBtn merriweather-light font-semibold">
                   Safe?{" "}
