@@ -4,9 +4,9 @@ import cross from "../../assets/cross.jpg";
 import Image from "next/image";
 import Navbar from "./Navbar";
 import { useState } from "react";
-import NetworkCheck from "./NetworkCheck";
+import NetworkCheck from "./NetworkCheck"; 
 import LinkInput from "./LinkInput";
-import Hero from "./Hero";
+import Hero from "./Hero"; 
 import About from "./About";
 // import Hero from "./Hero";
 
@@ -17,7 +17,7 @@ export default function Page() {
   };
 
   return (
-    <>
+    <div style={{ backgroundColor: "#002c46" }}>
       {/* the navbar */}
       <Navbar />
 
@@ -29,7 +29,12 @@ export default function Page() {
       {/* user input from link */}
       <LinkInput />
 
-      <About/>
-    </>
-  )
+      <About />
+
+      {/* the tick and its text,  */}
+      <NetworkCheck />
+    </div>
+  );
 }
+
+//
