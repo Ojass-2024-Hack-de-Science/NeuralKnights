@@ -2,8 +2,8 @@
 import heroImg from "@/assets/heroImg.jpg"; // Change the import name to lowercase
 import Image from "next/image";
 import { motion } from "framer-motion";
-import Reveal from "@/components/Reveal"
-
+import Reveal from "@/components/Reveal";
+import "../styles/CustomBtnStyles.css";
 export default function Hero() {
   return (
     <>
@@ -29,16 +29,16 @@ export default function Hero() {
             <p className=" text-8xl" style={{}}>
               Is your Network{" "}
               <u>
-                <b>Safe</b>
+                <b className="animBtn">Safe</b>
               </u>
               ?
             </p>
           </Reveal>
           <div>
-            <p className=" text-3xl my-7">Check today </p>
+            <p className="animBtn text-3xl my-7">Check today </p>
           </div>
         </div>
       </div>
     </>
-    )
-  }
+  );
+}
