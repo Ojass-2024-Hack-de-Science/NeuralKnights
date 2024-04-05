@@ -14,7 +14,7 @@ const Pricing = () => {
         <div className=" merriweather-light text-white text-6xl mx-5 py-2 flex justify-center items-center ">
           PRICING
         </div>
-        <div className="flex justify-center items-center ">
+        <div className="flex justify-center items-center my-auto mx-auto ">
           <div
             className="mx-4 px-4 flex flex-col justify-between"
             style={{
