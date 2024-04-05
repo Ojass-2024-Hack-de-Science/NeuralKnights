@@ -3,10 +3,23 @@ import React from "react";
 import "../styles/CustomBtnStyles.css";
 import "../styles/PricingStyles.css";
 import "../styles/CustomBtnStyles.css";
+import Footer from "../dashboard/Footer";
 const Pricing = () => {
   return (
     <>
       {/* backgroundColor: "#002c46" */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          fontSize: "2rem",
+          margin: "1em",
+        }}
+        className="merriweather-light"
+      >
+        PRICING
+      </div>
       <div class="wrapper ">
         <div
           class="pricing-table gprice-single"
@@ -95,6 +108,7 @@ const Pricing = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };
