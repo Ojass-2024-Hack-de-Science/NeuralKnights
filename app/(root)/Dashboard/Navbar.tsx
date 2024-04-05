@@ -17,7 +17,7 @@ export default function ButtonAppBar() {
   const session = useSession()
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+      <AppBar position="sticky">
         <Toolbar>
           <IconButton
             size="large"
