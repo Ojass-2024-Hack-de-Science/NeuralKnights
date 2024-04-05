@@ -27,11 +27,8 @@ export default function Page() {
       {/* <LinkInput /> */}
       {/* the tick and its text,  */}
       <NetworkCheck />
-
-        {/* the tick and its text,  */}
-        <NetworkCheck />
-      </div>
-    
+      <About />
+    </div>
   );
 }
 
