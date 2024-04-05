@@ -5,11 +5,9 @@ import Image from "next/image";
 import sideImg from "../../../assets/aaa.jpg";
 
 const About = () => {
-  const [width, setWidth] = useState(0); // Initial width is 0
-  const [textHeight, setTextHeight] = useState(0); // State to store text height
-  const textRef = useRef<HTMLDivElement>(null); // Explicitly typed as HTMLDivElement
+  const [width, setWidth] = React.useState(0); // Initial width is 0
 
-  useEffect(() => {
+  React.useEffect(() => {
     const handleResizeWindow = () => setWidth(window.innerWidth);
     // Subscribe to window resize event
     window.addEventListener("resize", handleResizeWindow);
@@ -18,57 +16,34 @@ const About = () => {
       window.removeEventListener("resize", handleResizeWindow);
     };
   }, []);
-
-  useEffect(() => {
-    // Calculate and set text height when the component mounts or text changes
-    if (textRef.current) {
-      setTextHeight(textRef.current.clientHeight);
-    }
-  }, [width]); // Only trigger effect when width changes
-
   return (
-    <div className="flex bg-slate-200">
+    <div className="flex  bg-slate-200">
       {width > 1100 ? (
-        <div
-          style={{
-            background: `url(${sideImg.src})`,
-            height: "80vh",
-            overflow: "hidden",
-            width: "50vw",
-          }}
-        >
-          <Image
-            src={sideImg}
-            alt="side image for about"
-            layout="fill" // Fill the container size
-            objectFit="cover" // Cover the container with the image
-            objectPosition="center" // Center the image in the container
-          />
+        <div style={{ background: `url(${sideImg.src})` }}>
+          <Image src={sideImg} alt="side image for about" />
         </div>
       ) : null}
       <div className="justify-between p-10 flex-col merriweather-light px-15">
-        <div className="flex justify-center m-auto text-4xl font-semibold">
-          <Image
-            src={img}
-            style={{ height: "100", width: "em" }}
-            alt="about Us image"
-            layout="fixed" // Keep the image dimensions fixed
-          />
-        </div>
-        <div
-          className="justify-center align-center"
-          style={{ height: textHeight }}
-        >
-          <div
-            className="flex flex-col justify-center items-center margin-auto md:mt-12"
-            ref={textRef} // Reference
-          >
+        {width < 700 ? (
+          <div className="w-[60%] flex justify-center m-auto text-4xl font-semibold">
+            <Image src={img} width={4000} height={4000} alt="about Us image" />
+          </div>
+        ) : (
+          <div className="w-[45%] flex justify-center m-auto text-4xl font-semibold">
+            <Image src={img} width={4000} height={4000} alt="about Us image" />
+          </div>
+        )}
+
+        <div className="justify-center align-center ">
+          {/* <Reveal> */}
+          <div className="flex flex-col justify-center items-center margin-auto md:mt-12">
             <Reveal>
               <div className="md:text-lg sm:text-xxs text-xxs xl:text-xl">
-                <p className="text-6xl m-6">
-                  The perfect solution to keep you safe.
+                {" "}
+                <p className="lg:text-4xl md:text-4xl sm:text-md  text-xxs xl:text-6xl text-xl ">
+                  <b>The perfect solution to keep you safe.</b>
                 </p>
-                <p className="text-xl m-6">
+                <p className="md:text-lg sm:text-xs text-xs xl:text-2xl mt-3">
                   We're a tech team committed to keeping malicious sites away
                   from you. Our SecurityApp keeps you updated on website safety.
                   Check a website's safety with our tool. Need help or have
@@ -77,6 +52,7 @@ const About = () => {
               </div>
             </Reveal>
           </div>
+          {/* </Reveal> */}
         </div>
       </div>
     </div>

@@ -14,12 +14,12 @@ export default function NetworkCheck() {
     <>
       {/* the tick and its text,  */}
       <div>
-        <div
+        {/* <div
           className="merriweather-light text-5xl flex justify-center text-white items-center p-5"
           style={{ minHeight: "25dvh" }}
         >
           Check a website now !!
-        </div>
+        </div> */}
       </div>
       {safe ? (
         <>
