@@ -15,7 +15,7 @@ export default function Page() {
   };
 
   return (
-    <>
+    <div style={{ backgroundColor: "#002c46" }}>
       {/* the navbar */}
       <Navbar />
 
@@ -27,6 +27,8 @@ export default function Page() {
 
       {/* the tick and its text,  */}
       <NetworkCheck />
-    </>
+    </div>
   );
 }
+
+//
