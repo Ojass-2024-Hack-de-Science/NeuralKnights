@@ -12,7 +12,7 @@ import Tooltip from "@mui/material/Tooltip";
 import { getServerSession } from "next-auth";
 import { NEXT_AUTH } from "@/lib/next_auth";
 import { signOut, useSession } from "next-auth/react";
-
+import Link from "next/link"
 export default function ButtonAppBar() {
   const session = useSession()
   return (
@@ -29,14 +29,16 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Welcome User
+            Welcome {session?.data?.user?.name || ''}
           </Typography>
 
-          <Tooltip title="Open Profile">
-            <IconButton sx={{ p: 0 }}>
-              <Avatar alt="Remy Sharp" src={session.data?.user?.image || ''} />
-            </IconButton>
-          </Tooltip>
+         <Link href={"/profile"}>
+            <Tooltip title="Open Profile">
+              <IconButton sx={{ p: 0 }}>
+                <Avatar alt="Remy Sharp" src={session.data?.user?.image || ''} />
+              </IconButton>
+            </Tooltip>
+         </Link>
 
           <Button color="inherit" onClick={()=>signOut()}>SignOut</Button>
         </Toolbar>

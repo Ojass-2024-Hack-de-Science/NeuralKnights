@@ -29,7 +29,7 @@ const page = async () => {
         </div>
         <div className=" flex flex-col justify-center px-14 gap-2  text-center">
           <div className=" font-semibold text-xl">Name: {user.name}</div>
-          <Dialog>
+          {/* <Dialog>
   <DialogTrigger>
           <Button variant={"secondary"} size={"lg"}>
             Change Password
@@ -43,7 +43,7 @@ const page = async () => {
       </DialogDescription>
     </DialogHeader>
   </DialogContent>
-</Dialog>
+</Dialog> */}
 
         </div>
       </div>
