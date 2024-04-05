@@ -5,13 +5,14 @@ import { Box } from "@mui/material";
 import Reveal from "@/components/Reveal";
 import { useState } from "react";
 import axios from "axios";
-import { todoListState } from "@/lib/atom";
+import { loadingState, todoListState } from "@/lib/atom";
 import { useSetRecoilState } from "recoil";
 
 export default function LinkInput() {
   const [website,setWebsite] = useState("");
   // const [flag,setFlag] = useState(0);
   const set = useSetRecoilState(todoListState)
+  const setLoading = useSetRecoilState(loadingState)
 //   const res = {
 //     "count": 6,
 //     "diff_srv_rate": [6, 6, 6, 6, 6, 6],
@@ -85,6 +86,7 @@ export default function LinkInput() {
   }
   
     try{
+      setLoading(true)
       const response = await axios.post("https://humble-sculpin-fair.ngrok-free.app/fetchNetworkData",{website})
     const res = response.data.data;
       for(let i=0;i<res.dst_bytes.length;i++){
@@ -105,9 +107,11 @@ export default function LinkInput() {
         if(ML.data.prediction[0] === 1){
           set(1)
           break;
+        }else{
+          set(0)
         }
       }
-      set(0)
+      setLoading(false)
     }catch(error){
       console.log(error)
     }
