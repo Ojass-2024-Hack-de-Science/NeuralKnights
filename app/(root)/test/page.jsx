@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import "../styles/CustomBtnStyles.css";
-import { Button } from "@/components/ui/button";
-import { TiTick } from "react-icons/ti";
 import BuyProduct from "../../../components/razorpay/BuyProduct";
 import { useState, useEffect } from "react";
 import { getUser } from "../../../action/getUser";
