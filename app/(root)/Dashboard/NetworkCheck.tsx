@@ -13,9 +13,9 @@ export default function NetworkCheck() {
   return (
     <>
       {/* the tick and its text,  */}
-      <div className="bg-slate-200">
+      <div>
         <div
-          className="merriweather-light text-8xl flex justify-center text-black items-center"
+          className="merriweather-light text-5xl flex justify-center text-white items-center p-5"
           style={{ minHeight: "25dvh" }}
         >
           Check a website now !!
