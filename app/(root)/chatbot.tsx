@@ -8,7 +8,7 @@ declare global {
  
  
  import Script from 'next/script';
-const Chatbot = () => {
+    const Chatbot = () => {
     const initBotpress = () => {
         window.botpressWebChat.init({
           composerPlaceholder: "E-Sewa",

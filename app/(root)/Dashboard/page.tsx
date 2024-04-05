@@ -1,13 +1,13 @@
 "use client";
-import tick from "../../assets/tick.jpg";
-import cross from "../../assets/cross.jpg";
+import tick from "@/assets/tick.jpg";
+import cross from "@/assets/cross.jpg";
 import Image from "next/image";
-import Navbar from "./Navbar";
+import Navbar from "../dashboard/Navbar";
 import { useState } from "react";
-import NetworkCheck from "./NetworkCheck"; 
-import LinkInput from "./LinkInput";
-import Hero from "./Hero"; 
-import About from "./About";
+import NetworkCheck from "../dashboard/NetworkCheck";
+import LinkInput from "../dashboard/LinkInput";
+import Hero from "../dashboard/Hero";
+import About from "../dashboard/About";
 // import Hero from "./Hero";
 
 export default function Page() {
@@ -17,22 +17,18 @@ export default function Page() {
   };
 
   return (
-    <div style={{ backgroundColor: "#002c46" }}>
+    <div style={{ backgroundColor: "#002c46", backgroundAttachment: "fixed" }}>
       {/* the navbar */}
       <Navbar />
 
       {/* the main pg */}
       <Hero />
-
-      {/* the tick and its text,  */}
-      <NetworkCheck />
       {/* user input from link */}
       <LinkInput />
-
-      <About />
-
       {/* the tick and its text,  */}
       <NetworkCheck />
+
+      <About />
     </div>
   );
 }
