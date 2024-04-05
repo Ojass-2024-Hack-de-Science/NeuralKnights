@@ -11,7 +11,7 @@ import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import { getServerSession } from "next-auth";
 import { NEXT_AUTH } from "@/lib/next_auth";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 export default function ButtonAppBar() {
   const session = useSession()
@@ -38,7 +38,7 @@ export default function ButtonAppBar() {
             </IconButton>
           </Tooltip>
 
-          <Button color="inherit">Logout</Button>
+          <Button color="inherit" onClick={()=>signOut()}>SignOut</Button>
         </Toolbar>
       </AppBar>
     </Box>

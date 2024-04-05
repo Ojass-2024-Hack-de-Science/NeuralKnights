@@ -1,14 +1,9 @@
 "use client";
-import tick from "../../assets/tick.jpg";
-import cross from "../../assets/cross.jpg";
-import Image from "next/image";
-import Navbar from "./Navbar";
 import { useState } from "react";
-import NetworkCheck from "./NetworkCheck";
-import LinkInput from "./LinkInput";
 import Hero from "./Hero";
-import About from "./About";
-// import Hero from "./Hero";
+import LinkInput from "./LinkInput";
+import Navbar from "./Navbar";
+import NetworkCheck from "./NetworkCheck";
 
 export default function Page() {
   const [safe, setSafe] = useState(true);
@@ -24,12 +19,11 @@ export default function Page() {
       {/* the main pg */}
       <Hero />
 
-      {/* the tick and its text,  */}
-      <NetworkCheck />
       {/* user input from link */}
       <LinkInput />
 
-      <About/>
+      {/* the tick and its text,  */}
+      <NetworkCheck />
     </>
-  )
+  );
 }

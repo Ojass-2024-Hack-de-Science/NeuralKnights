@@ -5,6 +5,15 @@ import { NEXT_AUTH } from "@/lib/next_auth";
 import { getServerSession } from "next-auth";
 import Image from "next/image";
 import React from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
+
 
 const page = async () => {
   const { user } = await getServerSession(NEXT_AUTH);
@@ -20,9 +29,22 @@ const page = async () => {
         </div>
         <div className=" flex flex-col justify-center px-14 gap-2  text-center">
           <div className=" font-semibold text-xl">Name: {user.name}</div>
+          <Dialog>
+  <DialogTrigger>
           <Button variant={"secondary"} size={"lg"}>
             Change Password
-          </Button>
+          </Button></DialogTrigger>
+  <DialogContent>
+    <DialogHeader>
+      <DialogTitle>Are you absolutely sure?</DialogTitle>
+      <DialogDescription>
+        This action cannot be undone. This will permanently delete your account
+        and remove your data from our servers.
+      </DialogDescription>
+    </DialogHeader>
+  </DialogContent>
+</Dialog>
+
         </div>
       </div>
         <div className=" p-10 flex justify-center items-center flex-col">
