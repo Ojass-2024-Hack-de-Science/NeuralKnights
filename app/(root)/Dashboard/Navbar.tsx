@@ -34,7 +34,7 @@ export default function ButtonAppBar() {
 
           <Tooltip title="Open Profile">
             <IconButton sx={{ p: 0 }}>
-              <Avatar alt="Remy Sharp" src={session.data?.user?.image} />
+              <Avatar alt="Remy Sharp" src={session.data?.user?.image || ''} />
             </IconButton>
           </Tooltip>
 
