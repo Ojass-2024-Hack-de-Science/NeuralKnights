@@ -4,27 +4,16 @@ import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import { useSession } from "next-auth/react";
 
 export default function ButtonAppBar() {
+  const session = useSession();
   return (
-    <Box
-      sx={{
-        flexGrow: 1,
-        zIndex: 100,
-        position: "sticky",
-        bottom: "0",
-        width: "100%",
-      }}
-    >
+    <Box sx={{ flexGrow: 1 }}>
       <AppBar position="sticky">
         <Toolbar>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{ flexGrow: 1 }}
-            className="flex flex-center text-center align-middle"
-          >
-            Made with ❤️ by NeuralKnights at NIT Jamshedpur
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            Made with ❤️ at NIT Jamshedput by Neural Knights
           </Typography>
         </Toolbar>
       </AppBar>

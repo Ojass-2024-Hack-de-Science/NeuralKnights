@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Box } from "@mui/material";
 import Reveal from "@/components/Reveal";
-
+import Link from "next/link";
 export default function LinkInput() {
   return (
     <>
@@ -36,9 +36,11 @@ export default function LinkInput() {
               />
             </h2>
             <div className="flex justify-center merriweather-light">
-              <Button variant={"secondary"} style={{ fontSize: "2em" }}>
-                Check
-              </Button>
+              <Link href="/pricing">
+                <Button variant={"secondary"} style={{ fontSize: "2em" }}>
+                  Check
+                </Button>
+              </Link>
             </div>
           </div>
         </Reveal>

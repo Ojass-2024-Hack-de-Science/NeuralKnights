@@ -16,9 +16,7 @@ export default function Page() {
 
   return (
     <>
-      <div
-        style={{ backgroundColor: "#002c46", backgroundAttachment: "fixed" }}
-      >
+      <div style={{ backgroundColor: "#b3ecff", maxHeight: "100dvh" }}>
         <Navbar />
         <Pricing />
       </div>
