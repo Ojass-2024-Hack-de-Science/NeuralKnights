@@ -16,7 +16,7 @@ export default function Page() {
 
   return (
     <>
-      <div style={{ backgroundColor: "#b3ecff"}}>
+      <div style={{ backgroundColor: "#b3ecff" }}>
         <Navbar />
         <Pricing />
       </div>
