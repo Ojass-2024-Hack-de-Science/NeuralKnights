@@ -19,7 +19,6 @@ export default function LinkInput() {
               className=" justify-center m-auto p-4 text-5xl pt-7 pb-10 merriweather-light flex text-center"
               style={{
                 color: "white",
-                // textShadow: "2px 2px #ffffff",
               }}
             >
               <Reveal>
@@ -27,7 +26,6 @@ export default function LinkInput() {
               </Reveal>
             </h1>
             <h2 className="flex flex-col justify-center m-auto text-3xl pb-4">
-              {/* <input type="url" placeholder=" Enter Your Link" required /> */}
               <Input
                 type="url"
                 placeholder="Enter Your Link"
