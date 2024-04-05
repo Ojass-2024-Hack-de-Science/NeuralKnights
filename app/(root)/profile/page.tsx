@@ -1,5 +1,5 @@
 import Card from "@/components/card";
-// import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { NEXT_AUTH } from "@/lib/next_auth";
 import { getServerSession } from "next-auth";
@@ -12,10 +12,10 @@ const page = async () => {
     <main className="flex h-[100vh] w-[100vw] flex-col p-28  bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]  from-blue-200 to-blue-400">
       <div className=" flex ">
         <div className=" flex gap-4 flex-col justify-center items-center">
-          {/* <Avatar>
+          <Avatar>
             <AvatarImage src={user.image} />
             <AvatarFallback>CN</AvatarFallback>
-          </Avatar> */}
+          </Avatar>
 
         </div>
         <div className=" flex flex-col justify-center px-14 gap-2  text-center">
