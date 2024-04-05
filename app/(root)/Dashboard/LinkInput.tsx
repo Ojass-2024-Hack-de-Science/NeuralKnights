@@ -107,6 +107,7 @@ export default function LinkInput() {
           break;
         }
       }
+      set(0)
     }catch(error){
       console.log(error)
     }
