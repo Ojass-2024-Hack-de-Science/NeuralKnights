@@ -2,9 +2,57 @@
 import React from "react";
 import "../styles/CustomBtnStyles.css";
 import "../styles/PricingStyles.css";
-import "../styles/CustomBtnStyles.css";
+import BuyProduct from "../../../components/razorpay/BuyProduct";
+import { useState, useEffect } from "react";
+import { getUser } from "../../../action/getUser";
+import { useSession } from "next-auth/react";
+
 import Footer from "../dashboard/Footer";
 const Pricing = () => {
+  const [userData, setUser] = useState(null);
+  const [userExists, setExistence] = useState(false);
+  const [amt, setAmt] = useState(49900);
+  const user = useSession();
+  console.log("User is  : ", user);
+  useEffect(() => {
+    if (user.isLoaded === false) return;
+    const userId = user?.user?.id;
+    getUser(userId)
+      .then((data) => {
+        setUser(data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [user.isLoaded]);
+  async function doesExist(email) {
+    const resp = await fetch("http://localhost:3000/api/isPaid", {
+      method: "POST",
+      body: JSON.stringify({
+        email: email,
+      }),
+    });
+    console.log("Response is  : ", resp);
+    if (resp.status === 200) {
+      setExistence(true);
+    } else {
+      setExistence(false);
+    }
+  }
+  useEffect(() => {
+    const data = {
+      id: userData?.user?._id,
+      externalUserId: userData?.user?.externalUserId,
+      name: userData?.user?.name,
+      email: userData?.user?.email,
+      _v: 0,
+    };
+    setUser(data);
+    doesExist(data.email);
+    setAmt(100);
+    console.log("Amount = ", amt);
+  }, [user.isLoaded]);
+
   return (
     <>
       {/* backgroundColor: "#002c46" */}
@@ -62,7 +110,7 @@ const Pricing = () => {
           </div>
           <div class="content">
             <div class="price">
-              <h1>$29</h1>
+              <h1>₹199</h1>
             </div>
             <ul>
               <li>5 GB Ram</li>
@@ -76,7 +124,7 @@ const Pricing = () => {
             </ul>
             <div class="sign-up">
               <a href="#" class="btn bordered radius">
-                Signup Now
+                <BuyProduct user={user} amt={19900} />
               </a>
             </div>
           </div>
@@ -90,7 +138,7 @@ const Pricing = () => {
           </div>
           <div class="content">
             <div class="price">
-              <h1>$39</h1>
+              <h1>₹349</h1>
             </div>
             <ul>
               <li>5 GB Ram</li>
@@ -102,7 +150,7 @@ const Pricing = () => {
             </ul>
             <div class="sign-up">
               <a href="#" class="btn bordered radius">
-                Signup Now
+                <BuyProduct user={user} amt={34900} />
               </a>
             </div>
           </div>

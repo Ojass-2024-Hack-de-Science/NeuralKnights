@@ -35,8 +35,8 @@ const BuyProduct = ({ user, amt }) => {
           //   // Authorization: 'YOUR_AUTH_HERE'
           // },
           body: JSON.stringify({
-            name: user.username,
-            mongoId: user._id,
+            name: user.name,
+            mongoId: user.id,
             email: user.email,
             razorpay_payment_id: response.razorpay_payment_id,
             razorpay_order_id: response.razorpay_order_id,

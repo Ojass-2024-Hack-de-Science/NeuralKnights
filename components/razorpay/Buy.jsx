@@ -11,7 +11,7 @@ const Buy = ({ makePayment }) => {
           makePayment({ productId: "example_ebook" });
         }}
         disabled={isLoading}
-        className={`bg-blue-500 text-white font-semibold  py-2 px-4 rounded ${
+        className={`bg-blue-500 font-semibold  py-2 px-4 rounded ${
           isLoading ? "opacity-50 cursor-not-allowed" : ""
         }`}
       >
