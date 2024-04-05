@@ -24,7 +24,7 @@ export default function Page() {
       {/* the main pg */}
       <Hero />
       {/* user input from link */}
-      <LinkInput />
+      {/* <LinkInput /> */}
       {/* the tick and its text,  */}
       <NetworkCheck />
 
