@@ -1,12 +1,7 @@
 "use client";
-import tick from "../../assets/tick.jpg";
-import cross from "../../assets/cross.jpg";
-import Image from "next/image";
-import Navbar from "./Navbar";
-import { useState } from "react";
-import NetworkCheck from "./NetworkCheck";
-import { Box } from "@mui/material";
+import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Box } from "@mui/material";
 
 export default function LinkInput() {
   return (
@@ -26,8 +21,11 @@ export default function LinkInput() {
           >
             Enter the Link You Want to Verify
           </h1>
-          <h2 className="flex flex-col justify-center m-auto  pb-4">
+          <h2 className="flex flex-col justify-center m-auto  items-center pb-4 gap-4">
           <Input />
+          <Button className=" w-20">
+            Check
+          </Button>
           </h2>
         </div>
       </Box>

@@ -26,10 +26,12 @@ export async function POST(req:NextRequest){
         if(!isMatch){
             return NextResponse.json({msg:"Wrong Password"})
         }
+        const hashedPassword = await bcrypt.hash(newPassword,10);
         const userUpdated = await User.updateOne({
                 id:session.user.id
-        })
+        },{password:hashedPassword})
+        return NextResponse.json({msg:"Password Changed"})
     } catch (error) {
-        
+        return NextResponse.json({msg:error})
     }
 }

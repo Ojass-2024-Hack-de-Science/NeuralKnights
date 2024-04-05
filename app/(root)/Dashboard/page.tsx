@@ -6,6 +6,8 @@ import Navbar from "./Navbar";
 import { useState } from "react";
 import NetworkCheck from "./NetworkCheck";
 import LinkInput from "./LinkInput";
+import Hero from "./Hero";
+import About from "./About";
 // import Hero from "./Hero";
 
 export default function Page() {
@@ -18,12 +20,16 @@ export default function Page() {
     <>
       {/* the navbar */}
       <Navbar />
-      {/* <Hero /> */}
+
+      {/* the main pg */}
+      <Hero />
+
       {/* the tick and its text,  */}
       <NetworkCheck />
-
       {/* user input from link */}
       <LinkInput />
+
+      <About/>
     </>
-  );
+  )
 }
