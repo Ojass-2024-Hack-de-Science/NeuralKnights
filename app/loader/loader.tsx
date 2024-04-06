@@ -1,5 +1,5 @@
-"use client"
-import React, { useState, useEffect } from 'react';
+"use client";
+import React, { useState, useEffect } from "react";
 
 interface Line {
   text: string;
@@ -8,12 +8,12 @@ interface Line {
 
 const TypingAnimation: React.FC = () => {
   const lines: Line[] = [
-    { text: 'Fetching network data/request ...' },
-    { text: 'Compiling it ...' },
-    { text: 'Training the model ...' },
-    { text: 'Fetching the data ...' },
-    { text: 'Verifying it from authentic sources ...' },
-    { text: 'Success - the website is safe ...' },
+    { text: "Fetching network data/request ..." },
+    { text: "Compiling it ..." },
+    { text: "Training the model ..." },
+    { text: "Fetching the data ..." },
+    { text: "Verifying it from authentic sources ..." },
+    { text: "And the results are ..." },
   ];
 
   const [currentLine, setCurrentLine] = useState(0);
@@ -29,7 +29,7 @@ const TypingAnimation: React.FC = () => {
         setCurrentIndex(i + 1);
       }
 
-      if (line.text.endsWith('.')) {
+      if (line.text.endsWith(".")) {
         await new Promise((resolve) => setTimeout(resolve, 400));
       }
       setCurrentLine(currentLine + 1);
