@@ -119,9 +119,8 @@ export default function LinkInput() {
         );
         console.log(ML);
         if (
-          content.dst_bytes > 1000 ||
-          ML.data.prediction[0] === 1 ||
-          content.src_bytes > 1000
+
+          ML.data.prediction[0] === 1 
         ) {
           set(1);
           console.log("Malicious");

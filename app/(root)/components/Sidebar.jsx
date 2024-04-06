@@ -44,9 +44,9 @@ export default function TemporaryDrawer() {
         {Object.keys(navig).map((text, index) => (
           <Link href={navig[text]} key={text}>
             <ListItemButton>
-              <ListItemIcon>
+              {/* <ListItemIcon>
                 {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
+              </ListItemIcon> */}
               <ListItemText primary={text} />
             </ListItemButton>
           </Link>
