@@ -58,12 +58,11 @@ const BlogPage = ({ params }: { params: Params }) => {
           </div>
           <div className=" text-xl font-semibold p-3">Comment</div>
           <div className="p-1">
-  <Comment id={id} />
-  {[...blog.comment].reverse().map((data, i) => {
-    return <CommentShow data={data} key={i} />;
-  })}
-</div>
-
+            <Comment id={id} />
+            {[...blog.comment].reverse().map((data, i) => {
+              return <CommentShow data={data} key={i} />;
+            })}
+          </div>
         </div>
         <div className=" min-h-[140vh] bg-slate-300">
           <div className="w-[60%] h-full  flex  flex-col p-32 gap-2">
