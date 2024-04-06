@@ -36,6 +36,7 @@ export const NEXT_AUTH = {
       },
     }),
   ],
+  signout: '/',
   secret: process.env.NEXTAUTH_SECRET,
   pages: {
     signIn: "/signin",

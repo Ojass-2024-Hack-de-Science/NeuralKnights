@@ -1,11 +1,7 @@
 "use client";
-import tick from "@/assets/tick.jpg";
-import cross from "@/assets/cross.jpg";
-import Image from "next/image";
 import Navbar from "../dashboard/Navbar";
 import { useState } from "react";
 import Pricing from "./Pricing";
-import About from "../dashboard/About";
 // import Hero from "./Hero";
 
 export default function Page() {
@@ -15,10 +11,12 @@ export default function Page() {
   };
 
   return (
-    <div style={{ backgroundColor: "#002c46", backgroundAttachment: "fixed" }}>
-      <Navbar />
-      <Pricing />
-      {/* the main pg */}
-    </div>
+    <>
+      <div style={{ backgroundColor: "#b3ecff" }}>
+        <Navbar />
+        <Pricing />
+      </div>
+      {/* <Test /> */}
+    </>
   );
 }

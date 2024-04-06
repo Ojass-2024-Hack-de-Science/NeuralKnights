@@ -1,6 +1,5 @@
 import React from "react";
 import Chatbot from "./chatbot";
-import Footer from "../(root)/dashboard/Footer";
 import "./index.css"
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -10,7 +9,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
       </div>
 
       {children}
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

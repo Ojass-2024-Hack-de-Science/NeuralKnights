@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Reveal from "@/components/Reveal";
 import img from "../../../assets/aboutUs.png";
 import Image from "next/image";
 import sideImg from "../../../assets/aaa.jpg";
+import { Button } from "@/components/ui/button";
+import Link from "next/link"
 const About = () => {
   const [width, setWidth] = React.useState(0); // Initial width is 0
 
@@ -44,11 +46,12 @@ const About = () => {
                   <b>The perfect solution to keep you safe.</b>
                 </p>
                 <p className="md:text-lg sm:text-xs text-xs xl:text-2xl mt-3">
-                  We're a tech team committed to keeping malicious sites away
+                  We&apos;re a tech team committed to keeping malicious sites away
                   from you. Our SecurityApp keeps you updated on website safety.
-                  Check a website's safety with our tool. Need help or have
+                  Check a website&apos;s safety with our tool. Need help or have
                   doubts? Reach out to our friendly bot or community post.
                 </p>
+                <Link href={"/pricing"}><Button  className="my-5 text-xl bg-blue-400 text-white" variant={"outline"}>SUBSCRIPTION</Button></Link>
               </div>
             </Reveal>
           </div>
