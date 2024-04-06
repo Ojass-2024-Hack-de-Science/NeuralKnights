@@ -10,7 +10,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
         url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap')
       </style>
 
-      <div style={{ zIndex: "1000" }}>
+      <div style={{ zIndex: "99" }}>
         <Chatbot />
       </div>
 

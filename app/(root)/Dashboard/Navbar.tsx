@@ -17,7 +17,7 @@ import { useSession } from "next-auth/react";
 export default function ButtonAppBar() {
   const session = useSession();
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, zIndex: "2" }}>
       <AppBar position="sticky">
         <Toolbar>
           <IconButton

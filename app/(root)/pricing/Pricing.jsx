@@ -63,8 +63,10 @@ const Pricing = () => {
           justifyContent: "center",
           fontSize: "3rem",
           margin: "1em",
+          color: "black",
+          width: "auto",
         }}
-        className="merriweather-light"
+        className="merriweather-light animBtn2"
       >
         PRICING
       </div>
@@ -81,17 +83,15 @@ const Pricing = () => {
               <h1> FREE</h1>
             </div>
             <ul>
-              <li>5 GB Ram</li>
-              <li>40GB SSD Cloud Storage</li>
-              <li>Month Subscription</li>
-              <li>Responsive Framework</li>
+              <li>5 site checkings per day</li>
+              <li>Unlimited chatbot usage</li>
               <li>
                 {" "}
-                <del>Monthly Billing Software</del>{" "}
+                <del>Community discussion forum</del>{" "}
               </li>
               <li>
                 {" "}
-                <del>1 Free Website</del>
+                <del>One-to-one support assistance</del>
               </li>
             </ul>
             <div>
@@ -113,13 +113,12 @@ const Pricing = () => {
               <h1>₹199</h1>
             </div>
             <ul>
-              <li>5 GB Ram</li>
-              <li>40GB SSD Cloud Storage</li>
-              <li>Month Subscription</li>
-              <li>Responsive Framework</li>
-              <li>Monthly Billing Software</li>
+              <li>5 site checkings per day</li>
+              <li>Unlimited chatbot usage</li>
+              <li>Community discussion forum</li>
+              <li></li>
               <li>
-                <del>1 Free Website</del>
+                <del>One-to-one support assistance</del>
               </li>
             </ul>
             <div class="sign-up">
@@ -131,7 +130,11 @@ const Pricing = () => {
         </div>
         <div
           class="pricing-table gprice-single"
-          style={{ maxHeight: "80dvh", backgroundColor: "#002c46" }}
+          style={{
+            maxHeight: "80dvh",
+            backgroundColor: "#002c46",
+            zIndex: "1",
+          }}
         >
           <div class="head">
             <h4 class="title  text-white">Premium</h4>
@@ -141,12 +144,10 @@ const Pricing = () => {
               <h1>₹349</h1>
             </div>
             <ul>
-              <li>5 GB Ram</li>
-              <li>40GB SSD Cloud Storage</li>
-              <li>Month Subscription</li>
-              <li>Responsive Framework</li>
-              <li>Monthly Billing Software</li>
-              <li>1 Free Website</li>
+              <li>5 site checkings per day</li>
+              <li>Unlimited chatbot usage</li>
+              <li>Community discussion forum</li>
+              <li>One-to-one support assistance</li>
             </ul>
             <div>
               <a href="#" class=" btn bordered radius">
