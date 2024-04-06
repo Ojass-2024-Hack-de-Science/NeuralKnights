@@ -88,7 +88,13 @@ export default function LinkInput() {
       setLoading(true)
       const response = await axios.post("https://humble-sculpin-fair.ngrok-free.app/fetchNetworkData",{website})
     const res = response.data.data;
-    if(res.dst_bytes.length === 0 || res.success===false){ 
+    console.log(response.data.success)
+    if( response.data.success == false){ 
+      set(1);
+      setLoading(false)
+      return;
+    }
+    if(res.dst_bytes.length === 0){
       set(1);
       setLoading(false)
       return;
