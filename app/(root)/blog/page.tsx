@@ -46,7 +46,7 @@ const Blog = () => {
       </div>
       <div className="absolute top-10  right-8   font-semibold text-xl flex justify-center items-center gap-2">
         <Button
-          onClick={() => signOut()}
+      onClick={()=>signOut({callbackUrl:"/"})}
           className=" font-bold "
           variant={"outline"}
         >

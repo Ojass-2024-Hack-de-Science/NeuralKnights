@@ -88,6 +88,17 @@ export default function LinkInput() {
       setLoading(true)
       const response = await axios.post("https://humble-sculpin-fair.ngrok-free.app/fetchNetworkData",{website})
     const res = response.data.data;
+    console.log(response.data.success)
+    if( response.data.success == false){ 
+      set(1);
+      setLoading(false)
+      return;
+    }
+    if(res.dst_bytes.length === 0){
+      set(1);
+      setLoading(false)
+      return;
+    }
       for(let i=0;i<res.dst_bytes.length;i++){
         const content:any = {
           protocol_type:data[res.protocol_type[i]],
@@ -108,9 +119,8 @@ export default function LinkInput() {
         );
         console.log(ML);
         if (
-          content.dst_bytes > 1000 ||
-          ML.data.prediction[0] === 1 ||
-          content.src_bytes > 1000
+
+          ML.data.prediction[0] === 1 
         ) {
           set(1);
           console.log("Malicious");
