@@ -3,7 +3,7 @@ import React, { Suspense } from "react";
 import Buy from "./Buy";
 import { useRouter } from "next/navigation";
 import Loading from "@/app/loading";
-
+import logo from "../../assets/NeuralKnights.jpg";
 const BuyProduct = ({ user, amt }) => {
   const router = useRouter();
 
@@ -17,9 +17,8 @@ const BuyProduct = ({ user, amt }) => {
     console.log(order.id);
     const options = {
       key: key,
-      name: "SOMESH DWIVEDI",
-      image:
-        "https://avatars.githubusercontent.com/u/116994984?s=400&u=52aac5eede573ac909e6f5c2c381061dcc7942bf&v=4",
+      name: "Neural Knights",
+      image: logo,
       currency: order.currency,
       amount: amt,
       order_id: order.id,

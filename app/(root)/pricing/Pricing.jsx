@@ -61,7 +61,7 @@ const Pricing = () => {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: "2rem",
+          fontSize: "3rem",
           margin: "1em",
         }}
         className="merriweather-light"
@@ -78,7 +78,7 @@ const Pricing = () => {
           </div>
           <div class="content">
             <div class="price">
-              <h1>$19</h1>
+              <h1> FREE</h1>
             </div>
             <ul>
               <li>5 GB Ram</li>
@@ -94,9 +94,9 @@ const Pricing = () => {
                 <del>1 Free Website</del>
               </li>
             </ul>
-            <div class="sign-up">
-              <a href="#" class="btn bordered radius">
-                Signup Now
+            <div>
+              <a href="#" class=" btn bordered radius">
+                FREE
               </a>
             </div>
           </div>
@@ -148,9 +148,9 @@ const Pricing = () => {
               <li>Monthly Billing Software</li>
               <li>1 Free Website</li>
             </ul>
-            <div class="sign-up">
-              <a href="#" class="btn bordered radius">
-                <BuyProduct user={user} amt={34900} />
+            <div>
+              <a href="#" class=" btn bordered radius">
+                Coming Soon
               </a>
             </div>
           </div>
