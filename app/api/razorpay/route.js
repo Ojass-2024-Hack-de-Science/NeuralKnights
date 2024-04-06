@@ -9,7 +9,7 @@ const instance = new Razorpay({
 
 export async function GET() {
   const payment_capture = 1;
-  const amount = 1 * 100;
+  const amount = 199 * 100;
   const currency = "INR";
   const options = {
     amount: Number(amount),
@@ -19,7 +19,7 @@ export async function GET() {
     notes: {
       // These notes will be added to your transaction. So you can search it within their dashboard.
       // Also, it's included in webhooks as well. So you can automate it.
-      paymentFor: "Ojass-2k24",
+      paymentFor: "Neural Knights",
       userId: "100",
       productId: "P100",
     },
