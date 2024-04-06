@@ -1,6 +1,19 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-# In this projectwe have ue Next.js , Typescript to build our project : 
+# In this project we have used Next.js , Typescript to build our project : 
+## An anomaly detection system aimed at : 
+Protecting users from harmful and 
+malicious websites using advanced 
+machine learning and automation
+
+Decision Logic : 
+![image](https://github.com/Ojass-2024-Hack-de-Science/NeuralKnights/assets/116994984/be1d72ae-a901-4a6c-85e2-057748cb8bc4)
+Features : 
+![image](https://github.com/Ojass-2024-Hack-de-Science/NeuralKnights/assets/116994984/0989e03d-8506-4460-8637-ebc691477045)
+
+## Preview  :  
+
+Homepage : 
 
 ![file_2024-04-06_05 56 56](https://github.com/Ojass-2024-Hack-de-Science/NeuralKnights/assets/116994984/631f198d-8059-4076-a831-17b8c632df7a)
 
