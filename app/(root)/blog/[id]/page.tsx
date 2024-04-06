@@ -65,7 +65,7 @@ const BlogPage = ({ params }: { params: Params }) => {
 </div>
 
         </div>
-        <div className="w-[40%] min-h-[140vh] bg-slate-300">
+        <div className=" min-h-[140vh] bg-slate-300">
           <div className="w-[60%] h-full  flex  flex-col p-32 gap-2">
             <div className=" font-semibold tracking-wider  text-md">Author</div>
             <div className=" flex  items-center gap-2">

@@ -43,7 +43,7 @@ console.log(allBlog)
     <div
      className="flex min-h-[100vh] w-[100vw] flex-col p-28  bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]  from-blue-200 to-blue-400">
       <div className="absolute top-9 left-9  font-semibold text-2xl flex justify-center items-center gap-2 ">
-        <div className="">Community Chat</div>
+        <Link href={"/dashboard"} ><div className="">Community Chat</div></Link>
       </div>
       <div className="absolute top-10  right-8   font-semibold text-xl flex justify-center items-center gap-2">
         <Button

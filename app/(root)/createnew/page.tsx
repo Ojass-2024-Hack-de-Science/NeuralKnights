@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useRouter } from "next/navigation";
 import { useAnimate } from "framer-motion";
+import { title } from "process";
 const CreateNewBlog = () => {
   const [isPending,startTransition] = useTransition()
   const form = useForm<z.infer<typeof blogZod>>({
@@ -21,9 +22,11 @@ const CreateNewBlog = () => {
       content: "",
     },
   });
+  const router = useRouter();
   async function onSubmit(values: z.infer<typeof blogZod>) {
+    if(values.title==="" || values.content==="") return null
     const data = await axios.post("http://localhost:3000/api/newBlog",{title:values.title,content:values.content})
-    console.log(data);
+    router.push("/blog")
   }
 
   return (

@@ -13,7 +13,8 @@ export async function POST(req: NextRequest) {
         const content: any = {
             comment,
             email: session.user.email,
-            image: session.user.image
+            image: session.user.image,
+            createdAt:new Date()
         }
         const blog = await BlogModel.updateOne({ _id: id }, { $push: { comment: content } });
         return NextResponse.json({ blog });
