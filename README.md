@@ -1,5 +1,19 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+# In this projectwe have ue Next.js , Typescript to build our project : 
+
+![file_2024-04-06_05 56 56](https://github.com/Ojass-2024-Hack-de-Science/NeuralKnights/assets/116994984/631f198d-8059-4076-a831-17b8c632df7a)
+
+![WhatsApp Image 2024-04-06 at 15 57 12_fbd8538a](https://github.com/Ojass-2024-Hack-de-Science/NeuralKnights/assets/116994984/2415999e-4d87-46f0-8863-21d8dcec3e72) 
+
+![WhatsApp Image 2024-04-06 at 15 57 11_a5e091cd](https://github.com/Ojass-2024-Hack-de-Science/NeuralKnights/assets/116994984/75186266-142f-4458-94f2-46de8ba8b8bf)
+
+![WhatsApp Image 2024-04-06 at 15 56 45_e57a36ad](https://github.com/Ojass-2024-Hack-de-Science/NeuralKnights/assets/116994984/44727f12-cf73-460a-b377-c3ff0e4f9c84)
+
+![WhatsApp Image 2024-04-06 at 15 57 12_c54e9552](https://github.com/Ojass-2024-Hack-de-Science/NeuralKnights/assets/116994984/fb97209b-efe0-443b-b359-08892b0104b8)
+
+
+
 ## Getting Started
 
 First, run the development server:
