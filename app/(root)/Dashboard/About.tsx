@@ -3,7 +3,8 @@ import Reveal from "@/components/Reveal";
 import img from "../../../assets/aboutUs.png";
 import Image from "next/image";
 import sideImg from "../../../assets/aaa.jpg";
-
+import { Button } from "@/components/ui/button";
+import Link from "next/link"
 const About = () => {
   const [width, setWidth] = React.useState(0); // Initial width is 0
 
@@ -18,11 +19,12 @@ const About = () => {
   }, []);
   return (
     <div className="flex  bg-slate-200">
-      {width > 1100 ? (
-        <div style={{ background: `url(${sideImg.src})` }}>
-          <Image src={sideImg} alt="side image for about" />
+        <div style={{ background: `url(${sideImg.src})` }} className=" hidden md:flex">
+          <Image src={sideImg} style={{
+            overflow:"hidden",
+            height:"80vh"
+          }} alt="side image for about" />
         </div>
-      ) : null}
       <div className="justify-between p-10 flex-col merriweather-light px-15">
         {width < 700 ? (
           <div className="w-[60%] flex justify-center m-auto text-4xl font-semibold">
@@ -44,11 +46,12 @@ const About = () => {
                   <b>The perfect solution to keep you safe.</b>
                 </p>
                 <p className="md:text-lg sm:text-xs text-xs xl:text-2xl mt-3">
-                  We're a tech team committed to keeping malicious sites away
+                  We&apos;re a tech team committed to keeping malicious sites away
                   from you. Our SecurityApp keeps you updated on website safety.
-                  Check a website's safety with our tool. Need help or have
+                  Check a website&apos;s safety with our tool. Need help or have
                   doubts? Reach out to our friendly bot or community post.
                 </p>
+                <Link href={"/pricing"}><Button  className="my-5 text-xl bg-blue-400 text-white" variant={"outline"}>SUBSCRIPTION</Button></Link>
               </div>
             </Reveal>
           </div>

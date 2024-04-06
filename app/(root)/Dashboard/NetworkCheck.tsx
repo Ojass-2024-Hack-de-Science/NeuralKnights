@@ -2,13 +2,15 @@
 import tick from "@/assets/tick.png";
 import cross from "@/assets/cross.png";
 import Image from "next/image";
-import { useState } from "react";
+import { todoListState } from "@/lib/atom";
+import { useRecoilValue } from "recoil";
 
 export default function NetworkCheck() {
-  const [safe, setSafe] = useState(true);
-  const safeHandler = () => {
-    setSafe(!safe);
-  };
+  // const [safe, setSafe] = useState(true);
+  const safe = useRecoilValue(todoListState)
+  // const safeHandler = () => {
+  //   setSafe(!safe);
+  // };
 
   return (
     <>
@@ -21,9 +23,8 @@ export default function NetworkCheck() {
           Check a website now !!
         </div> */}
       </div>
-      {safe ? (
+      {safe===-1?<div></div>:safe===0 ? (
         <>
-          {/* safe */}
           <div className="flex justify-center p-3  result">
             <Image src={tick} alt="safe" className="w-[20%]" />
             <h2
@@ -31,14 +32,12 @@ export default function NetworkCheck() {
               style={{
                 color: "#70F3C6",
               }}
-            >
-              {"   "}
+              >
               The Network is safe and protected
             </h2>
           </div>
         </>
       ) : (
-        // not safe
         <div className="flex justify-center p-3 result">
           <Image src={cross} alt="safe" className="w-[15%]" />
           <h2

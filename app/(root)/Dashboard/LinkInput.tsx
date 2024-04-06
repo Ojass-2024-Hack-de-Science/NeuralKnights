@@ -3,8 +3,127 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Box } from "@mui/material";
 import Reveal from "@/components/Reveal";
+import { useState } from "react";
+import axios from "axios";
+import { loadingState, todoListState } from "@/lib/atom";
+import { useSetRecoilState } from "recoil";
 import Link from "next/link";
 export default function LinkInput() {
+  const [website, setWebsite] = useState("");
+  // const [flag,setFlag] = useState(0);
+  const set = useSetRecoilState(todoListState)
+  const setLoading = useSetRecoilState(loadingState)
+//   const res = {
+//     "count": 6,
+//     "diff_srv_rate": [6, 6, 6, 6, 6, 6],
+//     "dst_bytes": [24, 24, 24, 24, 24, 904],
+//     "dst_host_same_srv_rate": 1,
+//     "dst_host_srv_count": 6,
+//     "flag": 6,
+//     "protocol_type": ["https:", "https:", "https:", "https:", "https:", "https:"],
+//     "same_srv_rate": 0,
+//     "service": 6,
+//     "src_bytes": [0, 0, 0, 0, 0, 889]
+// }
+
+  // // {
+  // //   "protocol_type": 1,
+  // //   "service": 19,
+  // //   "flag": 9,
+  // //   "src_bytes": 491,
+  // //   "dst_bytes": 0,
+  // //   "count": 2,
+  // //   "same_srv_rate": 1.00,
+  // //   "diff_srv_rate": 0.00,
+  // //   "dst_host_srv_count": 25,
+  // //   "dst_host_same_srv_rate": 0.17
+  // // }
+
+  const handleML = async () => {
+    const data: { [key: string]: number } = {
+      ftp_data: 19,
+      other: 41,
+      private: 46,
+      "https:": 22,
+      "remote_job": 48,
+      "name": 33,
+      "netbios_ns": 35,
+      "domain_u": 11,
+      "eco_i": 13,
+      "uucp": 62,
+      "mtp": 32,
+      "supdup": 55,
+      "Z38_50": 2,
+      "smtp": 51,
+      "netbios_dgm": 34,
+      "auth": 3,
+      "csnet_ns": 6,
+      "Z39": 50,
+      "bgp": 4,
+      "ecr_i": 14,
+      "gopher": 20,
+      "rfs": 19,
+      "vmnet": 64,
+      "systat": 56,
+      "efs": 15,
+      "iso_tap": 26,
+      "klogin": 27,
+      "uucp_path": 63,
+      "link": 30,
+      "sunrpc": 54,
+      "login": 31,
+      "kshell": 28,
+      "sql_net": 52,
+      "ssh": 53,
+      "telnet": 57,
+      "whois": 65,
+      "imap4": 25,
+      "netstat": 37,
+      "hostnames": 21,
+      "pop_3": 44,
+      "iso_tsap": 26
+  }
+  
+    try{
+      setLoading(true)
+      const response = await axios.post("https://humble-sculpin-fair.ngrok-free.app/fetchNetworkData",{website})
+    const res = response.data.data;
+      for(let i=0;i<res.dst_bytes.length;i++){
+        const content:any = {
+          protocol_type:data[res.protocol_type[i]],
+          service: res.service,
+          flag: res.flag,
+          src_bytes: res.src_bytes[i],
+          dst_bytes: res.dst_bytes[i],
+          count: res.count,
+          same_srv_rate: res.same_srv_rate,
+          diff_srv_rate: res.diff_srv_rate,
+          dst_host_srv_count: res.dst_host_srv_count,
+          dst_host_same_srv_rate: res.dst_host_same_srv_rate,
+        };
+
+        const ML = await axios.post(
+          "https://hornet-inspired-remotely.ngrok-free.app/ghjanomaly_prediction",
+          content
+        );
+        console.log(ML);
+        if (
+          content.dst_bytes > 1000 ||
+          ML.data.prediction[0] === 1 ||
+          content.src_bytes > 1000
+        ) {
+          set(1);
+          console.log("Malicious");
+          break;
+        }else{
+          set(0)
+        }
+      }
+      setLoading(false)
+    }catch(error){
+      console.log(error)
+    }
+  };
   return (
     <>
       <Box>
@@ -29,15 +148,19 @@ export default function LinkInput() {
             <h2 className="flex flex-col justify-center m-auto text-3xl pb-4">
               {/* <input type="url" placeholder=" Enter Your Link" required /> */}
               <Input
+                onChange={(e) => {
+                  setWebsite(e.target.value);
+                }}
                 type="url"
                 placeholder="Enter Your Link"
                 required
-                className="merriweather-light"
+                className="merriweather-light text-black"
                 style={{ minWidth: "45dvw" }}
               />
             </h2>
             <div className="flex justify-center merriweather-light pb-4">
               <Button
+                onClick={handleML}
                 className=""
                 variant={"secondary"}
                 style={{ fontSize: "1em" }}
