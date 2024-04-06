@@ -37,13 +37,13 @@ export default function ButtonAppBar() {
             </IconButton>
           </Tooltip>
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Welcome User
+          <Typography className="hidden md:flex"  component="div" sx={{ flexGrow: 1 }}>
+            Welcome {session.data?.user?.name || "User"}
           </Typography>
 
 
 
-          <Link href={"/blog"}><Button color="inherit" className="gap-1" >Community Chat<VscCommentDiscussion size={20}/></Button></Link>
+          <Link href={"/blog"}><Button color="inherit" className="gap-1"><p className=" text-xs md:text-base">Community Chat</p><VscCommentDiscussion size={20}/></Button></Link>
           <Button color="inherit" className="gap-1" onClick={()=>signOut({callbackUrl:"/"})}>SignOut<LogOut size={18}/></Button>
         </Toolbar>
       </AppBar>

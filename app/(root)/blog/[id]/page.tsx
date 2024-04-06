@@ -43,7 +43,7 @@ const BlogPage = ({ params }: { params: Params }) => {
       <div className="w-[100vw] flex justify-center items-center min-h-[100vh] bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))]  from-blue-200 to-blue-400">
         <Link href={"/blog"}>
           <div className="absolute top-9 left-9  font-semibold text-xl flex justify-center items-center gap-2">
-            <div>{blog.email}</div>
+            <div>Back to Community Forum</div>
           </div>
         </Link>
         <div className="w-[60%] min-h-[100vh] flex flex-col p-32">
